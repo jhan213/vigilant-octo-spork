@@ -12,7 +12,7 @@ if(localStorage.getItem("weather-dashboard-shortcuts") === null){
 }
 
 for(let i = 0; i < JSON.parse(localStorage.getItem("weather-dashboard-shortcuts")).length; i++){
-        $(".btn-group-vertical").append(`<btn id = "city-shortcut-${i}" type="button" class="btn btn-secondary btn-block">${JSON.parse(localStorage.getItem("weather-dashboard-shortcuts"))[i]}</btn>`);
+        $(".btn-group-vertical").append(`<btn id = "city-shortcut-${i}" type="button" class="btn btn-outline-secondary btn-block">${JSON.parse(localStorage.getItem("weather-dashboard-shortcuts"))[i]}</btn>`);
     }
 
 function updateShortcuts(string){
@@ -45,20 +45,47 @@ function display(){
                     })
                     .then(function (data) {
                         $("#city-header").text(city);
+                        $("#city-header").css("color", "black");
                         for(let i = 0; i < 6; i++){
+                            $("#day-" + i + "-logo").empty();
                             if(i == 0){
                                 $("#uv-index").text(data.daily[i].uvi);
+                                // Add UV Index color based on value
+                                if(data.daily[i].uvi <= 3){
+                                    $("#uv-index").css("color", "green")
+                                }
+                                if(data.daily[i].uvi > 3 && data.daily[i].uvi <= 6){
+                                    $("#uv-index").css("color", "yellow")
+                                }
+                                if(data.daily[i].uvi > 6 && data.daily[i].uvi <= 9.5){
+                                    $("#uv-index").css("color", "orange")
+                                }
+                                if(data.daily[i].uvi > 9.5){
+                                    $("#uv-index").css("color", "red")
+                                }
                                 $("#date-" + i).text("(" + moment.unix(data.daily[i].dt).format("MMMM Do YYYY") + ")");
                             }else{
                                 $("#date-" + i).text("(" + moment.unix(data.daily[i].dt).format("MM/DD/YYYY") + ")");
                             }
                             $("#day-" + i + "-temp").text(data.daily[i].temp.day + "\u00B0F")
+                            // Add logo based on weather
+                            if(data.daily[i].weather[0].main == "Clear"){
+                                $("#day-" + i + "-logo").append('<i class="fa fa-sun"></i>');
+                            }
+                            if(data.daily[i].weather[0].main == "Rain"){
+                                $("#day-" + i + "-logo").append('<i class="fa fa-cloud-rain"></i>');
+                            }
+                            if(data.daily[i].weather[0].main == "Clouds"){
+                                $("#day-" + i + "-logo").append('<i class="fa fa-cloud"></i>');
+                            }
+
                             $("#day-" + i + "-wind").text(data.daily[i].wind_speed + " MPH")
                             $("#day-" + i + "-humidity").text(data.daily[i].wind_speed + "%")
                         }
                     });
             }else{
                 $("#city-header").text("Invalid City");
+                $("#city-header").css("color", "red");
             }
         });
 };
@@ -98,3 +125,4 @@ $("#search-btn").on("click", function(){
     localStorage.setItem("weather-dashboard-current", $("input").val());
     display();
 });
+

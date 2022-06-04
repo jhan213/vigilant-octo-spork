@@ -1,5 +1,10 @@
 
 header{
     text-align: center;
-    background: linear-gradient(0.25turn, yellow, 10%, #9198e5);
+    background: linear-gradient(0.25turn, #9198e5, 50%, rgb(4, 59, 179));
+    color: white;
+}
+
+mark{
+    background-color: rgb(51, 51, 133);
 }
