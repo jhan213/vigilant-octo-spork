@@ -1,7 +1,7 @@
 var APIKey = "379f3e88c2d4e573d740243459112fe3";
 var city;
 var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
-cityArray = ["New York City", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio"]
+cityArray = ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio"];
 
 if(localStorage.getItem("weather-dashboard-current") === null){
     localStorage.setItem("weather-dashboard-current", cityArray[0]);
@@ -39,6 +39,7 @@ function display(){
         .then(function (data) {
             if(data.length > 0){
                 city = data[0].name;
+                console.log(data)
                 updateShortcuts(city);
                 addShortcuts();
                 var lat = data[0].lat
