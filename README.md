@@ -1,4 +1,4 @@
-# uclaext-module6-challenge
+# Web-Widget-Weather-Dashboard
 Weather Dashboard
 
 The project was completed along the guidelines for UCLA Extension's Module 6 Challenge.
