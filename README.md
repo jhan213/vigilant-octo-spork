@@ -1,4 +1,4 @@
-# uclaext-module6-challenge
+# Web-Widget-Weather-Dashboard
 Weather Dashboard
 
 The project was completed along the guidelines for UCLA Extension's Module 6 Challenge.
@@ -13,4 +13,4 @@ The data was retrieved from the OpenWeather One Call API.
 
 
 Deployed Github Link: 
-https://jaehan213.github.io/uclaext-module6-challenge/
+[https://jaehan213.github.io/Web-Widget-Weather-Dashboard/](https://jaehan213.github.io/Web-Widget-Weather-Dashboard/)
