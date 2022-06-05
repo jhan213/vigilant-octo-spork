@@ -8,3 +8,7 @@ header{
 mark{
     background-color: rgb(51, 51, 133);
 }
+
+ul{
+    list-style: none;
+}

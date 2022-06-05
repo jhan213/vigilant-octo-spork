@@ -11,9 +11,12 @@ if(localStorage.getItem("weather-dashboard-shortcuts") === null){
     localStorage.setItem("weather-dashboard-shortcuts", JSON.stringify(cityArray));
 }
 
-for(let i = 0; i < JSON.parse(localStorage.getItem("weather-dashboard-shortcuts")).length; i++){
+function addShortcuts(){
+    $(".btn-group-vertical").empty();
+    for(let i = 0; i < JSON.parse(localStorage.getItem("weather-dashboard-shortcuts")).length; i++){
         $(".btn-group-vertical").append(`<btn id = "city-shortcut-${i}" type="button" class="btn btn-outline-secondary btn-block">${JSON.parse(localStorage.getItem("weather-dashboard-shortcuts"))[i]}</btn>`);
     }
+}
 
 function updateShortcuts(string){
     var array = JSON.parse(localStorage.getItem("weather-dashboard-shortcuts"));
@@ -35,7 +38,9 @@ function display(){
         })
         .then(function (data) {
             if(data.length > 0){
+                city = data[0].name;
                 updateShortcuts(city);
+                addShortcuts();
                 var lat = data[0].lat
                 var lon = data[0].lon
                 var queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial&exclude=current,minutely,hourly,alerts&appid=" + APIKey;
@@ -45,7 +50,6 @@ function display(){
                     })
                     .then(function (data) {
                         $("#city-header").text(city);
-                        $("#city-header").css("color", "black");
                         for(let i = 0; i < 6; i++){
                             $("#day-" + i + "-logo").empty();
                             if(i == 0){
@@ -84,11 +88,23 @@ function display(){
                         }
                     });
             }else{
+                addShortcuts();
                 $("#city-header").text("Invalid City");
-                $("#city-header").css("color", "red");
+                for(let i = 0; i < 6; i++){
+                    $("#day-" + i + "-logo").empty();
+                    if(i == 0){
+                        $("#uv-index").text("NA");
+                        // Add UV Index color based on value
+                    }
+                    $("#day-" + i + "-temp").text("NA")
+                    // Add logo based on weather
+                    $("#day-" + i + "-logo").append('<i class="fa fa-question-circle"></i>');
+                    $("#day-" + i + "-wind").text("NA")
+                    $("#day-" + i + "-humidity").text("NA")
+                }
             }
         });
-};
+}
 
 display();
 

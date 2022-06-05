@@ -19,9 +19,9 @@
             <div class = "col-3">
                 <form id="skills-form">
                     <div class="form-group row">
-                        <h3>Search for a City:</h3>
+                        <h3 class = "bg-secondary rounded">Search for a City:</h3>
                         <input type="text" class="form-control" id="city-name" />
-                        <button id = "search-btn" type="submit" value="Submit" class="btn btn-outline-primary">
+                        <button id = "search-btn" type="button" value="Submit" class="btn btn-outline-primary">
                         Search
                         </button>
                         <div class="btn-group-vertical px-0 pt-3">
@@ -31,51 +31,53 @@
                 </form>
             </div>
             <div class = "col-9">
-                <div class="jumbotron text-center text-white bg-primary rounded">
-                    <h1 class="font-weight-bold pt-3"><span class = "text-black" id = "city-header"></span> <span id = "date-0"></span></h1>
-                    <hr class="my-4">
-                    <p>Temp: <span id = "day-0-temp"></span>  <span id = "day-0-logo"></span></p>
-                    <p>Wind: <span id = "day-0-wind"></span></p>
-                    <p>Humidity: <span id = "day-0-humidity"></span></p>
-                    <p class = "pb-3">UV Index:  <mark><span id = "uv-index"></span></mark></p>
+                <div class="jumbotron text-white bg-primary rounded">
+                    <ul>
+                        <li><h1 class="font-weight-bold pt-3"><span class = "text-black" id = "city-header"></span>  <span id = "day-0-logo"></span> <span id = "date-0"></span></h1></li>
+                        <li><hr class="my-4"></li>
+                        <li><p>Temp: <span id = "day-0-temp"></span></p></li>
+                        <li><p>Wind: <span id = "day-0-wind"></span></p></li>
+                        <li><p>Humidity: <span id = "day-0-humidity"></span></p></li>
+                        <li><p class = "pb-4">UV Index:  <mark class = "rounded"><span id = "uv-index"></span></mark></p></li>
+                    </ul>
                 </div>
                 <h3>5-Day Forecast:</h3>
                 <div class="card-group">
                     <div class="card text-white bg-primary mb-3">
                         <div class="card-body">
-                            <h5 class="card-title"><span id = "date-1"></span></h5>
-                            <p>Temp: <span id = "day-1-temp"></span>  <span id = "day-1-logo"></span></p>
+                            <h5 class="card-title pb-2"><span id = "date-1"></span>  <span id = "day-1-logo"></span></h5>
+                            <p>Temp: <span id = "day-1-temp"></span></p>
                             <p>Wind: <span id = "day-1-wind"></span></p>
                             <p>Humidity: <span id = "day-1-humidity"></span></p>
                         </div>
                     </div>
                     <div class="card text-white bg-primary mb-3">
                       <div class="card-body">
-                        <h5 class="card-title"><span id = "date-2"></span></h5>
-                        <p>Temp: <span id = "day-2-temp"></span>  <span id = "day-2-logo"></span></p>
+                        <h5 class="card-title pb-2"><span id = "date-2"></span>  <span id = "day-2-logo"></span></h5>
+                        <p>Temp: <span id = "day-2-temp"></span></span></p>
                         <p>Wind: <span id = "day-2-wind"></span></p>
                         <p>Humidity: <span id = "day-2-humidity"></span></p>
                       </div>
                     </div>
                     <div class="card text-white bg-primary mb-3">
                       <div class="card-body">
-                        <h5 class="card-title"><span id = "date-3"></span></h5>
-                        <p>Temp: <span id = "day-3-temp"></span>  <span id = "day-3-logo"></span></p>
+                        <h5 class="card-title pb-2"><span id = "date-3"></span>  <span id = "day-3-logo"></span></h5>
+                        <p>Temp: <span id = "day-3-temp"></span></p>
                         <p>Wind: <span id = "day-3-wind"></span></p>
                         <p>Humidity: <span id = "day-3-humidity"></span></p>
                       </div>
                     </div>
                     <div class="card text-white bg-primary mb-3">
                         <div class="card-body">
-                            <h5 class="card-title"><span id = "date-4"></span></h5>
-                            <p>Temp: <span id = "day-4-temp"></span>  <span id = "day-4-logo"></span></p>
+                            <h5 class="card-title pb-2"><span id = "date-4"></span>  <span id = "day-4-logo"></span></h5>
+                            <p>Temp: <span id = "day-4-temp"></span></p>
                             <p>Wind: <span id = "day-4-wind"></span></p>
                             <p>Humidity: <span id = "day-4-humidity"></span></p>
                         </div>
                       </div>
                       <div class="card text-white bg-primary mb-3">
                         <div class="card-body">
-                            <h5 class="card-title"><span id = "date-5"></span></h5>
+                            <h5 class="card-title pb-2"><span id = "date-5"></span>  <span id = "day-5-logo"></span></h5>
                             <p>Temp: <span id = "day-5-temp"></span>  <span id = "day-5-logo"></span></p>
                             <p>Wind: <span id = "day-5-wind"></span></p>
                             <p>Humidity: <span id = "day-5-humidity"></span></p>
