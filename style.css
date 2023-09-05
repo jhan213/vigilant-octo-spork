@@ -1,12 +1,15 @@
 
+body{
+    background: linear-gradient(0.25turn, #47BCF7, 50%,#4764f7);
+}
+
 header{
     text-align: center;
-    background: linear-gradient(0.25turn, #9198e5, 50%, rgb(4, 59, 179));
     color: white;
 }
 
-mark{
-    background-color: rgb(51, 51, 133);
+hr{
+    width: 95%;
 }
 
 ul{

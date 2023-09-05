@@ -8,42 +8,44 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel = "stylesheet" href = "style.css">
-    <title>Document</title>
+    <title>Web Weather Dashboard</title>./
 </head>
 <body>
-    <header>
-        <h1>Weather Dashboard</h1>
-    </header>
-    <div class = "container">
+    <div class = "container pt-5">
         <div class = "row">
+            <!-- col 3 and 9 to split website into two parts -->
+            <!-- col 3 contains the search bar and search history -->
             <div class = "col-3">
-                <form id="skills-form">
-                    <div class="form-group row">
-                        <h3 class = "bg-secondary rounded">Search for a City:</h3>
-                        <input type="text" class="form-control" id="city-name" />
-                        <button id = "search-btn" type="button" value="Submit" class="btn btn-outline-primary">
-                        Search
+                <!-- search bar -->
+                <div class="input-group">
+                    <input type="search" id="search-text" class="form-control" placeholder="Search City"/>
+                    <div class="input-group-append">
+                        <button id="search-btn" type="button" class="btn btn-primary">
+                            <i class="fas fa-search"></i>
                         </button>
-                        <div class="btn-group-vertical px-0 pt-3">
-                            <!-- Added buttons in script.js -->
-                        </div>
                     </div>
-                </form>
+                </div>
+                <!-- search history -->
+                <div class="btn-group-vertical mt-3 w-100"></div>
             </div>
             <div class = "col-9">
-                <div class="jumbotron text-white bg-primary rounded">
+                <!-- col 9 contains the current day's weather and sub-section for the next 5 days -->
+                <!-- current day's weather -->
+                <div class="jumbotron text-black bg-white rounded">
                     <ul>
-                        <li><h1 class="font-weight-bold pt-3"><span class = "text-black" id = "city-header"></span>  <span id = "day-0-logo"></span> <span id = "date-0"></span></h1></li>
-                        <li><hr class="my-4"></li>
+                        <li><h1 class="font-weight-bold pt-3"><span class = "text-black" id = "city-header"></span>  <span id = "day-0-logo"></span> </h1></li>
+                        <li><span id = "date-0"></span></li>
+                        <li><hr class="my-3"></li>
                         <li><p>Temp: <span id = "day-0-temp"></span></p></li>
                         <li><p>Wind: <span id = "day-0-wind"></span></p></li>
                         <li><p>Humidity: <span id = "day-0-humidity"></span></p></li>
-                        <li><p class = "pb-4">UV Index:  <mark class = "rounded"><span id = "uv-index"></span></mark></p></li>
+                        <li><p class = "pb-4">UV Index: <span id = "uv-index"></span></mark></p></li>
                     </ul>
                 </div>
+                <!-- next 5 day's weather -->
                 <h3>5-Day Forecast:</h3>
                 <div class="card-group">
-                    <div class="card text-white bg-primary mb-3">
+                    <div class="card text-black bg-white mb-3">
                         <div class="card-body">
                             <h5 class="card-title pb-2"><span id = "date-1"></span>  <span id = "day-1-logo"></span></h5>
                             <p>Temp: <span id = "day-1-temp"></span></p>
@@ -51,7 +53,7 @@
                             <p>Humidity: <span id = "day-1-humidity"></span></p>
                         </div>
                     </div>
-                    <div class="card text-white bg-primary mb-3">
+                    <div class="card text-black bg-white mb-3">
                       <div class="card-body">
                         <h5 class="card-title pb-2"><span id = "date-2"></span>  <span id = "day-2-logo"></span></h5>
                         <p>Temp: <span id = "day-2-temp"></span></span></p>
@@ -59,7 +61,7 @@
                         <p>Humidity: <span id = "day-2-humidity"></span></p>
                       </div>
                     </div>
-                    <div class="card text-white bg-primary mb-3">
+                    <div class="card text-black bg-white mb-3">
                       <div class="card-body">
                         <h5 class="card-title pb-2"><span id = "date-3"></span>  <span id = "day-3-logo"></span></h5>
                         <p>Temp: <span id = "day-3-temp"></span></p>
@@ -67,7 +69,7 @@
                         <p>Humidity: <span id = "day-3-humidity"></span></p>
                       </div>
                     </div>
-                    <div class="card text-white bg-primary mb-3">
+                    <div class="card text-black bg-white mb-3">
                         <div class="card-body">
                             <h5 class="card-title pb-2"><span id = "date-4"></span>  <span id = "day-4-logo"></span></h5>
                             <p>Temp: <span id = "day-4-temp"></span></p>
@@ -75,7 +77,7 @@
                             <p>Humidity: <span id = "day-4-humidity"></span></p>
                         </div>
                       </div>
-                      <div class="card text-white bg-primary mb-3">
+                      <div class="card text-black bg-white mb-3">
                         <div class="card-body">
                             <h5 class="card-title pb-2"><span id = "date-5"></span>  <span id = "day-5-logo"></span></h5>
                             <p>Temp: <span id = "day-5-temp"></span>  <span id = "day-5-logo"></span></p>
